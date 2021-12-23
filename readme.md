@@ -1,0 +1,1 @@
+A simple CRUD operations programme utilising yargs and a Mongoose database; udpdate operation needs tweaking to return actual values.

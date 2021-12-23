@@ -8,25 +8,16 @@ const app = async (args) => {
         let movieObj = {title: args.title, actor: args.actor, rating: args.rating}
         if (args.add) {
             await addMovie(movieObj);
-            //run add movie functionality
-        } else if (args.find) {
-            await findMovie(movieObj)
-        }
-
-        else if (args.update) {
-            console.log("SHWEEEEEOOPOOOOOOP")
-            await updateList();
-        }
-        
-        else if (args.delete) {
-            let movieObj = {title: args.title}
-            console.log("Whey!")
-            await deleteMovie(movieObj);
-        }   
-        
-        else {
-            console.log("Incorrect command");
-            Mongoose.disconnect();
+        }   else if (args.find) {
+                await findMovie(movieObj)
+        }   else if (args.update) {
+                await updateList();
+        }   else if (args.delete) {
+                let movieObj = {title: args.title}
+                await deleteMovie(movieObj);
+        }   else {
+                console.log("Incorrect command");
+                Mongoose.disconnect();
         }
     } catch (error) {
         console.log(error);
